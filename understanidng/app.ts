@@ -1,54 +1,18 @@
-// const person: {
-//     name:string;
-//     age: number;
+function combine(input1:number | string ,input2:number | string){
+   
 
-// } = {
-//     name: 'John',
-//     age: 34
-// };
-// console.log(person.name);
+    let result;
+    if  (typeof input1 === 'number' && typeof input2 === 'number'){
+       result = input1 + input2;
+    } else {
+        result = input1.toString() + input2.toString();  // Verketten von Strings
+    }
 
+    return result;
+ }
 
-// const person: {
-//     name: string;
-//     age: number;
-//     hobbies: string[];
-//     role: [number, string]; // das definiert eine Tuple
-// } = {
-//     name: 'John',
-//     age: 34,
-//     hobbies: ['Sport', 'Cooking'],
-//     role: [2, 'author']
-// }
+ const combinedAges = combine(30,26);
+ console.log(combinedAges);
 
-// const ADMIN = 0;
-// const READ_ONLY = 1;
-// const AUTHOR = 2;
-
-enum Role {ADMIN, READ_ONLY, AUTHOR};
-
-const person = {
-    name: 'John',
-    age: 34,
-    hobbies: ['Sport', 'Cooking'],
-    role: Role.ADMIN
-};
-
-// person.role.push('admin');
-// person.role[1] = 10;
-
-
-let favortiteActivities : string[];
-favortiteActivities = ['Sports'];
-console.log(person.name);
-
-for (const hobby of person.hobbies){
-    console.log(hobby.toUpperCase());
-    // console.log(hobby.map()); // Error !! weil das nicht ein teil von Typescript ist.
-}
-
-
-
-if (person.role === Role.AUTHOR){
-    console.log('is Admin');
-}
+ const combinedName = combine( 'Max','Anna');
+ console.log(combinedName);
